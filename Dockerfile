@@ -4,7 +4,7 @@ COPY mnvw pom.xml ./
 COPY .mvn .mvn
 COPY src src
 RUN chmod +x mvnw && ./mvnw -DskipTests package
-
+#stage 2
 FROM eclipse-temurin:17-jre
 WORKDIR /app
 ARG JAR=target/*.jar
